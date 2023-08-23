@@ -31,12 +31,12 @@ function Mesa () {
                     status={"Cheia"}
                 />
                 <ContainerMesa
-                    mesa={"Mesa 1"}
+                    mesa={"Numero da Mesa: 2"}
                     temperatura = {"20"}
                     status={"Cheia"}
                 />
                 <ContainerMesa
-                    mesa={"Mesa 1"}
+                    mesa={"Numero da Mesa: 3"}
                     temperatura = {"20"}
                     status={"Cheia"}
                 />
