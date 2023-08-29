@@ -1,14 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ContainerAtividade = ({ name, cor }) => {
+const ContainerAtividade = ({ name, cor, corTitulo, espacamento }) => {
     return (
-      <CenteredContainer>
-        <StyledContainer cor={cor}>
-          <Text>{name}</Text>
+        <StyledContainer 
+        cor={cor}
+        espacamento={espacamento}
+        >
+          <Text corTitulo= {corTitulo}>
+            {name}
+          </Text>
         </StyledContainer>
 
-      </CenteredContainer>
     );
   };
   
@@ -16,29 +19,28 @@ const ContainerAtividade = ({ name, cor }) => {
 
 
 const StyledContainer = styled.div`
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  background-color: ${props => props.cor};
-  border-radius: 10px;
-  width: 95%;
-  height: 50px;
-  display: flex;
+  margin-left: 104px;
+  margin-bottom: 34px;
+  margin-top: ${props=>props.espacamento};
+  height: 20px;
+  display: inline-flex;
+  padding: 12px 40px;
   justify-content: center;
   align-items: center;
-  margin-top: 24px;
-`;
-
-const CenteredContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  //height: 100vh; /* 100% da altura da janela de visualização */
+  gap: 40px;
+  border-radius: 20px;
+  background: ${props => props.cor};
+  display: inline-flex;
 `;
 
 
 
 const Text = styled.p`
-  font-size: 21px;
-  color: white;
+  color: ${props => props.corTitulo};
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 `;
-
 
