@@ -1,28 +1,28 @@
-import Mesa from './pages/Mesas/Mesa';
-
 import React from 'react';
-import ContainerTitulo from './components/ContainerTitulo/ContainerTitulo'; // Certifique-se de ajustar o caminho correto
 import ContainerAtividade from './components/ContainerAtividade/ContainerAtividade';
+import Cabecalho from './components/cabecalho/Cabecalho';
+import Mesa from './pages/Mesas/Mesa'; // Importa o componente Mesa
 
 function App() {
   return (
     <div>
-      <ContainerTitulo
-        titulo="Mesas de Clientes"
-        icon="icone" // Substitua pelo nome do ícone desejado
+      <Cabecalho></Cabecalho>
+      <ContainerAtividade 
+        name="Mesas Ocupadas"
+        cor='#2cb44e'
+        corTitulo='#000000'
+        espacamento='84px'
       />
+      <Mesa filtroLigado={1} /> {/* Apenas mesas ligadas = 1 */}
       <ContainerAtividade 
-      name = "Mesas Ativas"
-      cor= '#2cb44e'>
-      </ContainerAtividade>
-      <Mesa></Mesa>
-      <ContainerAtividade 
-      name = "Mesas Inativas"
-      cor= '#c92727'>
-      </ContainerAtividade>
-      <Mesa></Mesa>
+        name="Mesas Desocupadas"
+        cor='#E90000'
+        corTitulo='#FFFFFF'
+        espacamento='34px'
+      />
+      <Mesa filtroLigado={0} /> {/* Apenas mesas desligadas = 0 */}
     </div>
-  
   );
 }
+
 export default App;
