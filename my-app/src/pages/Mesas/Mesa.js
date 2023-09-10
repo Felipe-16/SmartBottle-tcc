@@ -17,7 +17,7 @@ const Mesa = ({ filtroLigado }) => {
     { title: "Mesa 08", ligado: 0 },
     { title: "Mesa 11", ligado: 0 },
     { title: "Mesa 12", ligado: 0 },
-    { title: "Mesa 13", ligado: 0 },
+    // { title: "Mesa 13", ligado: 0 },
   ];
 
   // Filtra as mesas de acordo com o filtroLigado
@@ -45,7 +45,7 @@ const CardContainer = styled.div`
   gap: 28px;
   margin-bottom: 20px;
   justify-content: flex-start;
-
+  background-color: ${(props) => props.theme.backgroundColor};
   width: calc(100% - 104px);
   margin-left: 104px;
 `;

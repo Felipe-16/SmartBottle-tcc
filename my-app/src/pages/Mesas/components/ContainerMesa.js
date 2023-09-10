@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ContainerMesa = ({ svg, title, nomeChip, temperature, status, ligado }) => {
+const ContainerMesa = ({title, nomeChip, temperature, status, ligado }) => {
   const isAtendido = nomeChip === 'Atendido';
-  const isLigado = ligado ===1;
-  
+
 
   if (ligado === 1) {
     return (
@@ -47,7 +46,7 @@ const CardWrapperLigado = styled.div`
   width: 407px;
   height: 198px;
   display: flex;
-  background-color: #FFFFFF;
+  background-color:${(props) => props.theme.containerColor};
   border-radius: 20px;
   margin-bottom: 20px;
   flex-shrink: 0;
@@ -146,8 +145,7 @@ const ContentDesligado = styled.div`
 
 const Title = styled.h2`
   margin: 0;
-  color: #000000;
-  font-family: Montserrat;
+  color: ${(props) => props.theme.textColor};
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
@@ -169,12 +167,17 @@ const ChipStatus = styled.div`
 
 const Text = styled.p`
   color: var(--black, #000);
-  font-family: Montserrat;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
 `;
 
-const Info = styled.div``;
+const Info = styled.div`
+color: ${(props) => props.theme.textColor};
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+`;
 

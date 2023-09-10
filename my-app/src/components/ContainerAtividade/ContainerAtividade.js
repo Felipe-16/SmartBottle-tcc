@@ -37,7 +37,6 @@ const StyledContainer = styled.div`
 
 const Text = styled.p`
   color: ${props => props.corTitulo};
-  font-family: Montserrat;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
