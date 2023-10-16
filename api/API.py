@@ -79,7 +79,7 @@ def atualizar_garrafa(id):
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
-socketio.run(app,port=5000,host='localhost')
+socketio.run(app,port=5000,host='0.0.0.0')
 
 
 
