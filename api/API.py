@@ -8,14 +8,14 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 
 # Lista para armazenar dados
 garrafas = [
-    {
-        'title': 'Mesa 01',
-        'id': 1,
-        'temperature': "5",
-        'status': 'Cheia',
-        'ligado': 1,
-        'nomeChip': 'Atender Mesa'
-    },
+    # {
+    #     'title': "Mesa 01" ,
+    #     'id': 1,
+    #     'temperature': "5",
+    #     'status': 'Cheia',
+    #     'ligado': 1,
+    #     'nomeChip': 'Atender Mesa'
+    # },
 ]
 
 # Função para verificar se o title da garrafa já existe
@@ -46,6 +46,15 @@ def adicionar_dados():
         # Verificar se um título duplicado já existe
         if verificar_dados_garrafa(title):
             return jsonify({"error": "Numero da garrafa já existe"}), 400
+
+        nova_bebida = {
+        'id': len(garrafas) + 1,  # Identificador automático
+        'title': 'Mesa 0' + str(len(garrafas) + 1),
+        'temperature': nova_bebida.get('temperature', ""),
+        'status': 'Cheia',
+        'ligado': 1,
+        'nomeChip': 'Atendido'
+    }
 
         # Se não houver título duplicado, adicione os novos dados
         garrafas.append(nova_bebida)
@@ -79,7 +88,7 @@ def atualizar_garrafa(id):
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
-socketio.run(app,port=5000,host='0.0.0.0')
+socketio.run(app,port=8000,host='0.0.0.0')
 
 
 

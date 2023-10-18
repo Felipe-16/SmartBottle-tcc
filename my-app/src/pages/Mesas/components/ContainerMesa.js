@@ -111,7 +111,7 @@ const StatusSvg = ({ status }) => {
         </defs>
       </svg>
     );
-  } else if (status === 'Vazio') {
+  } else if (status === 'Vazia') {
     return (
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="176" viewBox="0 0 20 176" fill="none">
         <rect y="0.31427" width="20" height="175.371" rx="10" fill="#DBE3F0" />

@@ -8,7 +8,7 @@ const Mesa = ({ filtroLigado }) => {
   
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://192.168.31.123:5000/garrafas');
+      const response = await axios.get('http://192.168.31.122:8000/garrafas');
       setMesas(response.data);
     } catch (error) {
       console.error('Erro ao obter dados:', error);
@@ -17,7 +17,7 @@ const Mesa = ({ filtroLigado }) => {
   
   useEffect(() => {
     fetchData(); // Execute a função imediatamente
-    const intervalId = setInterval(fetchData, 5000); // A cada 5 segundos
+    const intervalId = setInterval(fetchData, 2000); // A cada 5 segundos
     
     return () => {
       clearInterval(intervalId); // Limpe o intervalo quando o componente for desmontado
